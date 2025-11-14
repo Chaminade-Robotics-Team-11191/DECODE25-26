@@ -5,7 +5,6 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.CRServo;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
-import com.qualcomm.robotcore.hardware.Servo;
 
 @TeleOp(name = "Decode")
 public class Decode extends LinearOpMode {
@@ -43,14 +42,13 @@ public class Decode extends LinearOpMode {
                 rightFront.setPower(frontRightPower);
                 rightBack.setPower(backRightPower);
 
-                if (gamepad2.left_trigger > 0.1) {
+                if (gamepad2.left_trigger > 0) {
                     frontServo.setPower(1);
                     middleServo.setPower(1);
                     backServo.setPower(1);
                     topShoot.setPower(1);
                     bottomShoot.setPower(1);
-                }
-                else {
+                } else {
                     frontServo.setPower(0);
                     middleServo.setPower(0);
                     backServo.setPower(0);
